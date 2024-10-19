@@ -1,7 +1,14 @@
 name: Shell Commands
 
-on: [push]
+on: [push]  # push event
 
 jobs:
     run-shell-command:
         runs-on: ubuntu-latest
+        steps:
+          - name: print a string
+            run: echo "Hello World Github Action."
+          - name: multipy script
+            run: |
+              node -v
+              npm -v
