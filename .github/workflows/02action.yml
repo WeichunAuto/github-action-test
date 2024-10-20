@@ -6,10 +6,18 @@ jobs:
     run-github-actions:
         runs-on: ubuntu-latest
         steps:
-          - name: List Files
+          - name: List Files Before
             run: |
               pwd
               ls
+          - name: Checkout
+            uses: actions/checkout@v1
+
+          - name: List Files After checkout
+            run: |
+              pwd
+              ls
+
           - name: Simple JS Action
             id: greets
             uses: actions/hello-world-javascript-action@v1 # Github账号名/仓库名@版本号
@@ -17,3 +25,4 @@ jobs:
                 who-to-greet: Bobby  #输入
           - name: log greeting time
             run: echo "${{ steps.greets.outputs.time }}" #输出，只想上一个“greets”的输出。
+
