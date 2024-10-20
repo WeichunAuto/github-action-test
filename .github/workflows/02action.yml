@@ -26,3 +26,10 @@ jobs:
           - name: log greeting time
             run: echo "${{ steps.greets.outputs.time }}" #输出，只想上一个“greets”的输出。
 
+          - name: Evvironment Variables
+            run: |
+              echo $GITHUB_SHA
+              echo $GITHUB_REPOSITORY
+              echo $GITHUB_WORKSPACE
+              echo "${{ github.token }}"
+
