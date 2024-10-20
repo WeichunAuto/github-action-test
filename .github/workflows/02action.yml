@@ -8,7 +8,7 @@ jobs:
         steps:
           - name: Simple JS Action
             id: greets
-            uses: WeichunAuto/javascript-action-helloWorld@20671e690b3ee258b3d3a379268594e9f422c4a8
+            uses: actions/hello-world-javascript-action@V1
             with:
                 who-to-greet: Bobby
           - name: log greeting time
