@@ -20,6 +20,7 @@ jobs:
 
     run-windows-command:
         runs-on: windows-latest
+        needs: ["run-shell-command"] # 该job的运行依赖指定job的运行结束。（默认job和job之间是同时运行的）
         steps:
           - name: Directory Powershell
             run: Get-Location
